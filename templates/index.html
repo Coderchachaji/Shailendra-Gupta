@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name | Data Analyst Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Shailendra Gupta | Data Analyst Portfolio</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <!-- Intro Animation Container -->
@@ -17,7 +18,7 @@
             <!-- Profile Photo -->
             <div class="profile-photo-container">
                 <div class="profile-photo-outline"></div>
-                <img src="profile.png" alt="Your Name" class="profile-photo">
+                <img src="{{ url_for('static', filename='images/profile.png') }}" alt="Shailendra Gupta" class="profile-photo">
             </div>
             
             <!-- Name and Title -->
@@ -32,7 +33,6 @@
 
     <!-- Main Content (hidden initially) -->
     <main id="main-content" style="display: none;">
-        <!-- Your portfolio content goes here -->
         <header>
             <nav>
                 <!-- Navigation will go here -->
@@ -60,7 +60,8 @@
         </footer>
     </main>
 
+    <!-- JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-    <script src="script.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
