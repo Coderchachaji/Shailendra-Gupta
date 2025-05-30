@@ -4,63 +4,384 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shailendra Gupta | Data Analyst Portfolio</title>
-    <!-- CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <!-- Intro Animation Container -->
+    <!-- Enhanced Intro Animation -->
     <div id="intro-animation">
-        <!-- SVG Grid Container -->
-        <svg id="grid-svg" width="100%" height="100%" preserveAspectRatio="none"></svg>
-        
-        <!-- Content Container -->
+        <div class="floating-particles"></div>
         <div class="intro-content-container">
-            <!-- Profile Photo -->
-            <div class="profile-photo-container">
-                <div class="profile-photo-outline"></div>
-                <img src="{{ url_for('static', filename='images/profile.png') }}" alt="Shailendra Gupta" class="profile-photo">
-            </div>
-            
-            <!-- Name and Title -->
             <div class="intro-content">
-                <h1>Shailendra Gupta</h1>
-                <p>Data Analyst & Visualization Specialist</p>
+                <!-- Profile Image in Intro -->
+                <div class="intro-profile-image">
+                    <img src="{{ url_for('static', filename='images/profile.png') }}" alt="Shailendra Gupta" class="profile-intro-img">
+                </div>
+                <h1 class="glitch-text">Shailendra Gupta</h1>
+                <p class="typewriter-text">Data Analyst & Machine Learning Enthusiast</p>
+                <div class="intro-stats">
+                    <span class="stat-bubble">Python Expert</span>
+                    <span class="stat-bubble">ML Specialist</span>
+                    <span class="stat-bubble">MCA Graduate</span>
+                 
+                </div>
             </div>
         </div>
-        
-        <button id="skip-intro">Skip Intro</button>
     </div>
 
-    <!-- Main Content (hidden initially) -->
-    <main id="main-content" style="display: none;">
-        <header>
-            <nav>
-                <!-- Navigation will go here -->
+    <!-- Main Content -->
+    <main id="main-content">
+        <header id="main-header">
+            <nav class="container">
+                <a href="#" class="logo">
+                <img src="{{ url_for('static', filename='images/profile.png') }}" alt="Logo" class="logo-image">
+                <span>Shailendra Gupta</span>
+                </a>
+
+                <ul class="nav-links">
+                    <li><a href="#about" class="nav-link active">About</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#experience" class="nav-link">Experience</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <button class="mobile-menu-btn" id="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </nav>
         </header>
         
-        <section id="about">
-            <!-- About section content -->
+        <section id="about" class="content-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">About Me</h2>
+                </div>
+                <div class="section-content">
+                    <div class="about-grid">
+                        <div class="about-text">
+                            <p class="intro-paragraph">
+                                Hello! I'm Shailendra Gupta, a passionate Data Analyst with expertise in Python, SQL, and machine learning. I hold a Master's in Computer Applications from Tripura University and have experience in large-scale data processing, ETL automation, and building predictive models for real-world challenges.
+                            </p>
+                            <p class="detail-paragraph">
+                                I specialize in transforming raw data into actionable insights through advanced analytics, web scraping, and interactive visualizations. My work spans across banking sector analysis, highway safety assessment, and AI model optimization through data annotation projects.
+                            </p>
+                            
+                        </div>
+                        <div class="about-highlights">
+                            <div class="highlight-card">
+                                <div class="card-icon">🎯</div>
+                                <h3>My Approach</h3>
+                                <p>Combining statistical analysis with machine learning to solve complex data challenges and drive business decisions.</p>
+                            </div>
+                            <div class="highlight-card">
+                                <div class="card-icon">🚀</div>
+                                <h3>What Drives Me</h3>
+                                <p>Passionate about using computer-assisted vision technologies to support learning disabilities and creating social impact through data.</p>
+                            </div>
+                            <div class="highlight-card">
+                                <div class="card-icon">🎨</div>
+                                <h3>Innovation</h3>
+                                <p>Secured government funding for assistive technology projects, demonstrating technical leadership and innovation in AI applications.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
         
-        <section id="skills">
-            <!-- Skills section content -->
+        <section id="projects" class="content-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Featured Projects</h2>
+                </div>
+                <div class="section-content">
+                    <div class="projects-grid">
+                        <div class="project-card" onclick="window.open('https://app-f87ltzfkmpvy9f8vnuf7vg.streamlit.app/', '_blank')">
+                            <div class="project-image">
+                                <img src="{{ url_for('static', filename='images/upi-analysis.jpg') }}" alt="UPI Analysis Project" class="project-img">
+                                <div class="project-overlay">
+                                    <span class="project-tech">Python • SQL • Power BI • Web Scraping</span>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3>UPI Transaction Data Analysis</h3>
+                                <p>Developed automated web scraping pipeline using BeautifulSoup and Selenium to extract UPI transaction data from major Indian banks. Created interactive dashboards analyzing transaction volumes, success rates, and market share.</p>
+                                <div class="project-tags">
+                                    <span class="tag">Banking Analytics</span>
+                                    <span class="tag">Web Scraping</span>
+                                    <span class="tag">Power BI</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="project-card" onclick="window.open('https://app-f87ltzfkmpvy9f8vnuf7vg.streamlit.app/', '_blank')">
+                            <div class="project-image">
+                                <img src="{{ url_for('static', filename='images/highway-safety.jpg') }}" alt="Highway Safety Project" class="project-img">
+                                <div class="project-overlay">
+                                    <span class="project-tech">Python • Folium • Statistical Analysis</span>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3>Indian Highway Safety Risk Detection</h3>
+                                <p>Analyzed 20,000+ km of Indian highway data to quantify route safety metrics. Created interactive safety heatmaps using Folium, highlighting accident-prone areas and turn severity distributions.</p>
+                                <div class="project-tags">
+                                    <span class="tag">Geospatial Analysis</span>
+                                    <span class="tag">Safety Analytics</span>
+                                    <span class="tag">Interactive Maps</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="project-card" onclick="window.open('https://github.com/sg48/ransomware-detection-ml', '_blank')">
+                            <div class="project-image">
+                                <img src="{{ url_for('static', filename='images/download.jpg') }}" alt="Ransomware Detection Project" class="project-img">
+                                <div class="project-overlay">
+                                    <span class="project-tech">Machine Learning • Python</span>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3>Ransomware Detection using ML</h3>
+                                <p>Built machine learning models to detect ransomware attacks with high accuracy. Implemented various classification algorithms to identify malicious patterns in system behavior.</p>
+                                <div class="project-tags">
+                                    <span class="tag">Cybersecurity</span>
+                                    <span class="tag">ML Classification</span>
+                                    <span class="tag">Anomaly Detection</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="project-card" onclick="window.open('https://github.com/sg48/etl-heat-risk-pipeline', '_blank')">
+                            <div class="project-image">
+                                <img src="{{ url_for('static', filename='images/download (1).jpg') }}" alt="ETL Pipeline Project" class="project-img">
+                                <div class="project-overlay">
+                                    <span class="project-tech">ETL • Data Pipeline • Analytics</span>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3>ETL Pipeline for Heat Risk Assessment</h3>
+                                <p>Developed automated ETL pipeline to assess heat risk in major cities. Processed large-scale climate and demographic data to identify vulnerable areas and populations.</p>
+                                <div class="project-tags">
+                                    <span class="tag">ETL Pipeline</span>
+                                    <span class="tag">Climate Data</span>
+                                    <span class="tag">Risk Assessment</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
         
-        <section id="projects">
-            <!-- Projects section content -->
+        <section id="skills" class="content-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Skills & Expertise</h2>
+                </div>
+                <div class="section-content">
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <div class="skill-icon">🐍</div>
+                            <h3>Programming</h3>
+                            <div class="skill-items">
+                                <div class="skill-item">
+                                    <span>Python</span>
+                                    <div class="skill-bar"><div class="skill-fill" style="width: 95%"></div></div>
+                                </div>
+                                <div class="skill-item">
+                                    <span>SQL</span>
+                                    <div class="skill-bar"><div class="skill-fill" style="width: 90%"></div></div>
+                                </div>
+                                <div class="skill-item">
+                                    <span>C/C++</span>
+                                    <div class="skill-bar"><div class="skill-fill" style="width: 80%"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <div class="skill-icon">📊</div>
+                            <h3>Data Analysis & Visualization</h3>
+                            <div class="skill-items">
+                                <div class="skill-item">
+                                    <span>Pandas & NumPy</span>
+                                    <div class="skill-bar"><div class="skill-fill" style="width: 93%"></div></div>
+                                </div>
+                                <div class="skill-item">
+                                    <span>Power BI</span>
+                                    <div class="skill-bar"><div class="skill-fill" style="width: 89%"></div></div>
+                                </div>
+                                <div class="skill-item">
+                                    <span>Matplotlib/Seaborn</span>
+                                    <div class="skill-bar"><div class="skill-fill" style="width: 85%"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <div class="skill-icon">🤖</div>
+                            <h3>Data Processing & ML</h3>
+                            <div class="skill-items">
+                                <div class="skill-item">
+                                    <span>Web Scraping</span>
+                                    <div class="skill-bar"><div class="skill-fill" style="width: 91%"></div></div>
+                                </div>
+                                <div class="skill-item">
+                                    <span>Machine Learning</span>
+                                    <div class="skill-bar"><div class="skill-fill" style="width: 88%"></div></div>
+                                </div>
+                                <div class="skill-item">
+                                    <span>Statistical Analysis</span>
+                                    <div class="skill-bar"><div class="skill-fill" style="width: 82%"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
         
-        <section id="contact">
-            <!-- Contact section content -->
+        <section id="experience" class="content-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Experience & Education</h2>
+                </div>
+                <div class="section-content">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-date">Aug 2024 - March 2025</div>
+                            <div class="timeline-content">
+                                <h3>Data Annotation Contractor</h3>
+                                <h4>Zuru Services LLP</h4>
+                                <p>Collaborated with AI/ML teams to improve model performance through systematic data labeling. Gained hands-on experience with structured/unstructured data, strengthening data organization and preprocessing skills.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-date">Nov 2022 - July 2024</div>
+                            <div class="timeline-content">
+                                <h3>Masters of Computer Application</h3>
+                                <h4>Tripura University</h4>
+                                <p>Specialized in advanced computing concepts, data structures, machine learning, and software development. Completed projects in ransomware detection and ETL pipeline development.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-date">Jan 2021 - Nov 2022</div>
+                            <div class="timeline-content">
+                                <h3>Search Engine Evaluator (Freelance)</h3>
+                                <h4>Independent Contractor</h4>
+                                <p>Annotated and labeled large-scale datasets to improve AI search algorithms. Analyzed search trends and optimized data workflows for better algorithm performance.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-date">July 2019 - July 2022</div>
+                            <div class="timeline-content">
+                                <h3>Bachelor in Science (B.Sc)</h3>
+                                <h4>Jaipur National University</h4>
+                                <p>Built foundation in mathematics, statistics, and computer science. Developed analytical thinking and problem-solving skills essential for data analysis.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact" class="content-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Let's Connect</h2>
+                </div>
+                <div class="section-content">
+                    <div class="contact-grid">
+                        <div class="contact-form-section">
+                            <h3>Send Message</h3>
+                            <form class="contact-form" action="/contact" method="POST">
+                                <div class="form-group">
+                                    <input type="text" name="name" placeholder="Your Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" name="email" placeholder="Your Email" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="subject" placeholder="Subject" required>
+                                </div>
+                                <div class="form-group">
+                                    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                                </div>
+                                <button type="submit" class="btn-primary">Send Message</button>
+                            </form>
+                        </div>
+                        <div class="contact-info-section">
+                            <div class="contact-methods">
+                                <div class="contact-card">
+                                    <div class="contact-icon">📧</div>
+                                    <div>
+                                        <h4>Email</h4>
+                                        <p>shailendragupta48@gmail.com</p>
+                                    </div>
+                                </div>
+                                <div class="contact-card">
+                                    <div class="contact-icon">📱</div>
+                                    <div>
+                                        <h4>Phone</h4>
+                                        <p>(+91) 9079657838</p>
+                                    </div>
+                                </div>
+                                <div class="contact-card">
+                                    <div class="contact-icon">📍</div>
+                                    <div>
+                                        <h4>Location</h4>
+                                        <p>Jaipur, India</p>
+                                    </div>
+                                </div>
+                                <div class="contact-card">
+                                    <div class="contact-icon">💼</div>
+                                    <div>
+                                        <h4>LinkedIn</h4>
+                                        <p>shailendragupta48</p>
+                                    </div>
+                                </div>
+                                <div class="contact-card">
+                                    <div class="contact-icon">🐙</div>
+                                    <div>
+                                        <h4>GitHub</h4>
+                                        <p>sg48</p>
+                                    </div>
+                                </div>
+                                <div class="contact-card">
+                                    <div class="contact-icon">🌐</div>
+                                    <div>
+                                        <h4>Portfolio</h4>
+                                        <p>https://shailendra-gupta-1.onrender.com/</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
         
         <footer>
-            <!-- Footer content -->
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-brand">
+                        <h3>Shailendra Gupta</h3>
+                        <p>Transforming Data into Insights</p>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2024 Shailendra Gupta. Python and SQL-focused Data Analyst.</p>
+                </div>
+            </div>
         </footer>
     </main>
 
-    <!-- JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
