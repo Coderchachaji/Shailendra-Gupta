@@ -4,7 +4,6 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html')  # Loads index.html from /templates
+    return render_template('index.html')
 
-if __name__ == '__main__':
-    app.run(debug=True)
+# No need for app.run() when deploying to Vercel
